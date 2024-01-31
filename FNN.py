@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-"""data = pd.read_csv(r"deep-learning,\data\data1\winequality-red.csv",sep=";").values
+"""data = pd.read_csv(r"data\data1\winequality-red.csv",sep=";").values
 x = data.T[:-1].T
 
 y = data.T[-1]-3

@@ -3,10 +3,10 @@ import pandas as pd
 import idx2numpy
 from FNN import *
 
-trainingdata = idx2numpy.convert_from_file(r"deep-learning,\data\data3\train-images.idx3-ubyte")
+trainingdata = idx2numpy.convert_from_file(r"data\data3\train-images.idx3-ubyte")
 tsh = trainingdata.shape
 trainingdata = trainingdata.reshape(tsh[0],tsh[1],tsh[2],1)
-traininglables = idx2numpy.convert_from_file(r"deep-learning,\data\data3\train-labels.idx1-ubyte")
+traininglables = idx2numpy.convert_from_file(r"data\data3\train-labels.idx1-ubyte")
 y1 = np.zeros((traininglables.shape[0],int(traininglables.max()-traininglables.min()+1)))
 
 

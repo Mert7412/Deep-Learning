@@ -3,8 +3,8 @@ from FNN import *
 import idx2numpy
 
 
-data = idx2numpy.convert_from_file(r"deep-learning,\data\data3\train-images.idx3-ubyte")
-y = idx2numpy.convert_from_file(r"deep-learning,\data\data3\train-labels.idx1-ubyte")
+data = idx2numpy.convert_from_file(r"data\data3\train-images.idx3-ubyte")
+y = idx2numpy.convert_from_file(r"data\data3\train-labels.idx1-ubyte")
 y1 = np.zeros((y.shape[0],int(y.max()-y.min()+1)))
 
 y1[np.arange(y.shape[0]),np.array(y,dtype=int)] = 1
