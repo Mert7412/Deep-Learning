@@ -10,7 +10,7 @@ from Network import Network
 from Layers import Normalization,Linear
 from Activations import Relu,Softmax
 from Optimizers import GradientDescent,Adam
-from LossFunctions import CrossEntropy
+from LossFunctions import CrossEntropySoftmax,CrossEntropy
 
 data = pd.read_csv(r"data\data1\winequality-red.csv",sep=";").values
 x = data.T[:-1].T
@@ -36,7 +36,7 @@ model.add_layer(Normalization(256))
 model.add_layer(Linear(256,6))
 model.add_layer(Softmax())
 
-optimizer = Adam(model,CrossEntropy().forward)
+optimizer = Adam(model,CrossEntropySoftmax().forward)
 optimizer.train(x,y1,1e-6,10000,batch_size=64)
 
 
