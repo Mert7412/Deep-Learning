@@ -1,4 +1,6 @@
 from AutoGrad import Array
+from os import listdir,mkdir
+import pickle
 
 class Network:
     def __init__(self,sequential_data = False):
@@ -34,6 +36,28 @@ class Network:
             loss.backward()
 
         return loss
+    
+    def save(self,model_name):
+        if "Models" not in listdir():
+            mkdir("Models")
+        if model_name not in listdir("Models"):
+            mkdir(f"Models/{model_name}")
+        
+        with open(f"Models/{model_name}/{model_name}.pickle","wb") as f:
+            pickle.dump(self.layers,f)
+
+    def load(self,model_name):
+        if model_name not in listdir("Models"):
+            print("Model not found")
+        else:
+            with open(f"Models/{model_name}/{model_name}.pickle","rb") as f:
+                layers = pickle.load(f)
+                for layer in layers.values():
+                    self.add_layer(layer)
+
+        
+
+
 
 
 
