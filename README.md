@@ -157,14 +157,3 @@ This project is open source and available under the MIT License.
 ## Author
 
 Created by [Mert7412](https://github.com/Mert7412)
-
-## Future Enhancements
-
-- [ ] Add batch normalization layers
-- [ ] Implement dropout for regularization
-- [ ] Add attention mechanisms
-- [ ] Create example notebooks with tutorials
-- [ ] Add performance benchmarks
-- [ ] Implement GPU support
-- [ ] Add more loss functions
-- [ ] Create comprehensive test suite
